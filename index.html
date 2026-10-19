@@ -504,12 +504,10 @@ if(document.readyState==='complete')runIntro();else window.addEventListener('loa
    例：'photos/01.jpg' 或 'https://你的网站/01.jpg'。
    跨域图片需允许 CORS。空地址/加载失败时显示明确的纪念卡占位图。
    也可在网页点“装入照片”，一次选择最多 34 张本地照片（仅本机使用）。 */
-const PHOTO_URLS = [
- '', '', '', '', '', '', '', '', '', '', // 01–10
- '', '', '', '', '', '', '', '', '', '', // 11–20
- '', '', '', '', '', '', '', '', '', '', // 21–30
- '', '', '', ''                         // 31–34
-];
+const PHOTO_URLS = Array.from(
+  { length: 34 },
+  (_, i) => `photos/${String(i + 1).padStart(2, '0')}.jpg`
+);
 const THREE_URLS = [
  'https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js',
  'https://unpkg.com/three@0.164.1/build/three.module.js'
