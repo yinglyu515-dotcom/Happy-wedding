@@ -506,7 +506,7 @@ if(document.readyState==='complete')runIntro();else window.addEventListener('loa
    也可在网页点“装入照片”，一次选择最多 34 张本地照片（仅本机使用）。 */
 const PHOTO_URLS = Array.from(
   { length: 34 },
-  (_, i) => `photos/${String(i + 1).padStart(2, '0')}.jpg`
+  (_, i) => `${i + 1}.jpg`
 );
 const THREE_URLS = [
  'https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js',
